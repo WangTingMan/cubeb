@@ -250,6 +250,7 @@ winmm_refill_stream(cubeb_stream * stm)
 
 static unsigned __stdcall winmm_buffer_thread(void * user_ptr)
 {
+  cubeb_set_current_thread_name("winmm_buffer_thread");
   cubeb * ctx = (cubeb *)user_ptr;
   XASSERT(ctx);
 

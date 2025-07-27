@@ -15,18 +15,18 @@ extern "C" {
 #endif
 
 typedef struct cubeb_mixer cubeb_mixer;
-cubeb_mixer *
+CUBEB_EXPORT cubeb_mixer *
 cubeb_mixer_create(cubeb_sample_format format, uint32_t in_channels,
                    cubeb_channel_layout in_layout, uint32_t out_channels,
                    cubeb_channel_layout out_layout);
-void
+CUBEB_EXPORT void
 cubeb_mixer_destroy(cubeb_mixer * mixer);
-int
+CUBEB_EXPORT int
 cubeb_mixer_mix(cubeb_mixer * mixer, size_t frames, const void * input_buffer,
                 size_t input_buffer_size, void * output_buffer,
                 size_t output_buffer_size);
 
-unsigned int
+CUBEB_EXPORT unsigned int
 cubeb_channel_layout_nb_channels(cubeb_channel_layout channel_layout);
 
 #if defined(__cplusplus)

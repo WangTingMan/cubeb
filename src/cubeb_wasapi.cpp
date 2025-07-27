@@ -511,6 +511,7 @@ private:
   static unsigned int __stdcall thread_proc(LPVOID args)
   {
     AutoRegisterThread raii("WASAPI device notification thread");
+    cubeb_set_current_thread_name("device_notification");
     XASSERT(args);
     auto mdn = static_cast<monitor_device_notifications *>(args);
     mdn->notification_thread_loop();
@@ -1385,6 +1386,8 @@ wasapi_stream_destroy(cubeb_stream * stm);
 static unsigned int __stdcall wasapi_stream_render_loop(LPVOID stream)
 {
   AutoRegisterThread raii("cubeb rendering thread");
+  cubeb_set_current_thread_name("cubeb_rendering");
+
   cubeb_stream * stm = static_cast<cubeb_stream *>(stream);
 
   auto_stream_ref stream_ref(stm);

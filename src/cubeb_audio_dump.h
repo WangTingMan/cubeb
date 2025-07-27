@@ -25,7 +25,7 @@ typedef struct cubeb_audio_dump_session * cubeb_audio_dump_session_t;
 // This is generally called when deciding to start logging some audio.
 //
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_init(cubeb_audio_dump_session_t * session);
 
 // End audio dumping session
@@ -36,7 +36,7 @@ cubeb_audio_dump_init(cubeb_audio_dump_session_t * session);
 //
 // This is not real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_shutdown(cubeb_audio_dump_session_t session);
 
 // Register a stream for dumping to a file
@@ -48,7 +48,7 @@ cubeb_audio_dump_shutdown(cubeb_audio_dump_session_t session);
 //
 // This is not real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_stream_init(cubeb_audio_dump_session_t session,
                              cubeb_audio_dump_stream_t * stream,
                              cubeb_stream_params stream_params,
@@ -64,7 +64,7 @@ cubeb_audio_dump_stream_init(cubeb_audio_dump_session_t session,
 //
 // This is not real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_stream_shutdown(cubeb_audio_dump_session_t session,
                                  cubeb_audio_dump_stream_t stream);
 
@@ -77,7 +77,7 @@ cubeb_audio_dump_stream_shutdown(cubeb_audio_dump_session_t session,
 //
 // This is not real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_start(cubeb_audio_dump_session_t session);
 
 // Stop dumping.
@@ -88,7 +88,7 @@ cubeb_audio_dump_start(cubeb_audio_dump_session_t session);
 //
 // This is not real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_stop(cubeb_audio_dump_session_t session);
 
 // Dump some audio samples for audio stream id.
@@ -97,7 +97,7 @@ cubeb_audio_dump_stop(cubeb_audio_dump_session_t session);
 //
 // This is real-time safe.
 // Returns 0 in case of success.
-int
+CUBEB_EXPORT int
 cubeb_audio_dump_write(cubeb_audio_dump_stream_t stream, void * audio_samples,
                        uint32_t count);
 

@@ -315,4 +315,13 @@ cubeb_sample_size(cubeb_sample_format format);
 using auto_lock = std::lock_guard<owned_critical_section>;
 #endif // __cplusplus
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+CUBEB_EXPORT void
+    cubeb_set_current_thread_name(char const* strings);
+#if defined(__cplusplus)
+}
+#endif
+
 #endif /* CUBEB_UTILS */

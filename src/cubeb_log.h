@@ -30,19 +30,19 @@ extern "C" {
   (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #endif
 
-void
+CUBEB_EXPORT void
 cubeb_log_set(cubeb_log_level log_level, cubeb_log_callback log_callback);
-cubeb_log_level
+CUBEB_EXPORT cubeb_log_level
 cubeb_log_get_level(void);
-cubeb_log_callback
+CUBEB_EXPORT cubeb_log_callback
 cubeb_log_get_callback(void);
-void
+CUBEB_EXPORT void
 cubeb_log_internal_no_format(const char * msg);
-void
+CUBEB_EXPORT void
 cubeb_log_internal(const char * filename, uint32_t line, const char * fmt, ...);
-void
+CUBEB_EXPORT void
 cubeb_async_log(const char * fmt, ...);
-void
+CUBEB_EXPORT void
 cubeb_async_log_reset_threads(void);
 
 #ifdef __cplusplus
